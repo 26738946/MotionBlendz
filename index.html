@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Motion Blendz Barbershop – Transforming Lives With Clippers. Professional haircuts, skin fades, dreadlocks, hair treatments, home service, and luxury grooming in Nigeria." />
+  <meta name="keywords" content="barbershop, haircut, skin fade, dreadlocks, hair treatment, beard grooming, Motion Blendz" />
+  <title>Motion Blendz | Transforming Lives With Clippers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <!-- Loading animation shows MB initials by default -->
+      <div class="loader-logo">
+        <span class="loader-m">M</span><span class="loader-b">B</span>
+      </div>
+      <div class="loader-text">MOTION BLENDZ</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+
+      <!-- LOGO: Just save your logo file as images/logo.png — it shows up here automatically.
+           If the file is missing, the text "MOTIONBLENDZ" shows as a fallback. -->
+      <a href="#home" class="nav-logo">
+        <img src="images/logo.png" alt="Motion Blendz" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+        <span class="nav-logo-text" style="display:none;"><span class="logo-motion">MOTION</span><span class="logo-blendz">BLENDZ</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#booking" class="nav-cta">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+
+    <!-- HERO BACKGROUND: Save your photo as images/hero-bg.jpg
+         Then open style.css, find .hero-bg-image, and uncomment the background-image line.
+         Until then, a dark red gradient is shown automatically. -->
+    <div class="hero-bg-image"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-bg-grid"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-fade">
+        <span class="eyebrow-line"></span>
+        <span>MOTION BLENDZ</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <p class="hero-tagline reveal-fade delay-1">Transforming Lives With Clippers</p>
+      <h1 class="hero-headline reveal-up delay-2">
+        Sharp Cuts.<br />
+        <em>Clean Blends.</em><br />
+        Premium Grooming.
+      </h1>
+      <p class="hero-sub reveal-fade delay-3">
+        Professional haircuts, skin fades, dreadlocks, hair treatments,<br class="br-desktop" />
+        home service, and luxury grooming experiences.
+      </p>
+      <div class="hero-buttons reveal-fade delay-4">
+        <a href="#booking" class="btn btn-primary">
+          <i class="fas fa-scissors"></i> Book Appointment
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-phone"></i> Contact Us
+        </a>
+      </div>
+      <div class="hero-scroll-hint reveal-fade delay-5">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Visual side -->
+        <div class="about-visual reveal-left">
+
+          <!-- Save your shop/barber photo as images/about-main.jpg and it will appear here automatically -->
+          <div class="about-img-main">
+            <img src="images/about-main.jpg" alt="Motion Blendz Studio" class="about-real-img" />
+            <div class="about-img-placeholder" aria-hidden="true">
+              <i class="fas fa-camera"></i>
+              <span>Add about-main.jpg</span>
+            </div>
+          </div>
+
+          <div class="about-badge glass-card">
+            <span class="badge-number">5+</span>
+            <span class="badge-label">Years of<br />Excellence</span>
+          </div>
+
+          <!-- Save a small detail photo as images/about-accent.jpg and it will appear here -->
+          <div class="about-img-accent">
+            <img src="images/about-accent.jpg" alt="Detail shot" class="about-real-img" />
+            <div class="about-img-placeholder small" aria-hidden="true">
+              <i class="fas fa-camera"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Text side -->
+        <div class="about-text reveal-right">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 class="section-title">More Than a Haircut.<br /><em>A Statement.</em></h2>
+          <p class="about-body">
+            Motion Blendz was born from a passion for precision and a belief that every client deserves more than just a haircut — they deserve a transformation. We blend technical mastery with a luxury experience, so you leave not just looking different, but feeling it.
+          </p>
+          <p class="about-body">
+            From sharp skin fades to intricate dreadlocks, our team brings artistry and professionalism to every chair. We bring the barbershop to you when needed, because elite grooming shouldn't have limits.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="1200">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="4500">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Haircuts Done</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+              <span class="stat-label">Satisfaction Rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section id="services" class="services section dark-section">
+    <div class="container">
+      <div class="section-header reveal-fade">
+        <p class="section-eyebrow">What We Offer</p>
+        <h2 class="section-title">Premium <em>Services</em></h2>
+        <p class="section-subtitle">Every service is crafted with precision, care, and a commitment to your best look.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card glass-card reveal-up delay-1">
+          <div class="service-icon"><i class="fas fa-cut"></i></div>
+          <h3>Professional Haircuts</h3>
+          <p>Classic and modern cuts tailored to your face shape and personal style. Clean lines, sharp edges.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-2">
+          <div class="service-icon"><i class="fas fa-magic"></i></div>
+          <h3>Skin Fades</h3>
+          <p>Ultra-clean skin fades from low to high. Precision blending that makes your cut stand out everywhere you go.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-3">
+          <div class="service-icon"><i class="fas fa-home"></i></div>
+          <h3>Home Service</h3>
+          <p>Can't make it in? We come to you. Enjoy the full Motion Blendz experience from your own space.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-1">
+          <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Gents Hair Dye</h3>
+          <p>Bold colour, precise application. From natural tones to statement shades — we handle it all with expertise.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-2">
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <h3>Female Hair Dye</h3>
+          <p>Vibrant, long-lasting colour treatments for women. Highlights, full-colour, balayage — your vision, our hands.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-3">
+          <div class="service-icon"><i class="fas fa-spa"></i></div>
+          <h3>Hair Treatments</h3>
+          <p>Restore, nourish, and strengthen your hair with our premium treatment range for all hair types.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-1">
+          <div class="service-icon"><i class="fas fa-hurricane"></i></div>
+          <h3>Dreadlocks</h3>
+          <p>New installs, maintenance, and styling. We grow your loc journey with care and cultural respect.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-2">
+          <div class="service-icon"><i class="fas fa-redo"></i></div>
+          <h3>Relocking</h3>
+          <p>Expert retwisting and relocking services to keep your locs neat, tight, and immaculate at every stage.</p>
+          <div class="service-glow"></div>
+        </div>
+        <div class="service-card glass-card reveal-up delay-3">
+          <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+          <h3>Beard Grooming</h3>
+          <p>Shape, trim, and define your beard to perfection. Hot towel finishes and premium beard oil included.</p>
+          <div class="service-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US ===== -->
+  <section id="why" class="why section">
+    <div class="container">
+      <div class="section-header reveal-fade">
+        <p class="section-eyebrow">The Difference</p>
+        <h2 class="section-title">Why <em>Motion Blendz</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal-up delay-1">
+          <div class="why-icon"><i class="fas fa-medal"></i></div>
+          <h3>Expert Barbers</h3>
+          <p>Certified professionals who treat your hair as a canvas. Every cut is an intentional work of art.</p>
+        </div>
+        <div class="why-card reveal-up delay-2">
+          <div class="why-icon"><i class="fas fa-tools"></i></div>
+          <h3>Premium Equipment</h3>
+          <p>Professional-grade clippers, razors, and tools. No compromise on the instruments touching your hair.</p>
+        </div>
+        <div class="why-card reveal-up delay-3">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Clean Environment</h3>
+          <p>Sanitised after every client. Your health and comfort are our non-negotiables.</p>
+        </div>
+        <div class="why-card reveal-up delay-1">
+          <div class="why-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Modern Techniques</h3>
+          <p>We stay at the cutting edge of grooming trends — constantly learning, constantly evolving.</p>
+        </div>
+        <div class="why-card reveal-up delay-2">
+          <div class="why-icon"><i class="fas fa-motorcycle"></i></div>
+          <h3>Home Service</h3>
+          <p>We meet you where you are. Bring the barbershop to your door — no stress, full service.</p>
+        </div>
+        <div class="why-card reveal-up delay-3">
+          <div class="why-icon"><i class="fas fa-star"></i></div>
+          <h3>Satisfaction Guaranteed</h3>
+          <p>We don't stop until you love what you see. Your satisfaction is the only result we accept.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section id="gallery" class="gallery section dark-section">
+    <div class="container">
+      <div class="section-header reveal-fade">
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title">The <em>Gallery</em></h2>
+        <p class="section-subtitle">Every photo is proof. This is what precision looks like.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="gallery-filters reveal-fade">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="haircut">Haircuts</button>
+        <button class="filter-btn" data-filter="fade">Skin Fades</button>
+        <button class="filter-btn" data-filter="dreadlocks">Dreadlocks</button>
+        <button class="filter-btn" data-filter="beard">Beard</button>
+        <button class="filter-btn" data-filter="colour">Colour</button>
+      </div>
+
+      <!-- HOW TO ADD YOUR GALLERY PHOTOS:
+           Save photos into the images/ folder as gallery-1.jpg, gallery-2.jpg ... gallery-9.jpg
+           Each img tag below already points to the right file — just drop your photo in and it shows up.
+           To add more photos, copy any gallery-item div and paste it below the last one. -->
+
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-item reveal-up" data-category="fade">
+          <img src="images/gallery-1.jpg" alt="Skin Fade" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Skin Fade</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-1" data-category="haircut">
+          <img src="images/gallery-2.jpg" alt="Classic Cut" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Classic Cut</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-2" data-category="dreadlocks">
+          <img src="images/gallery-3.jpg" alt="Dreadlocks" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Dreadlocks</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-1" data-category="beard">
+          <img src="images/gallery-4.jpg" alt="Beard Shape" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Beard Shape</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-2" data-category="colour">
+          <img src="images/gallery-5.jpg" alt="Hair Colour" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Hair Colour</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-3" data-category="fade">
+          <img src="images/gallery-6.jpg" alt="High Fade" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>High Fade</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up" data-category="haircut">
+          <img src="images/gallery-7.jpg" alt="Premium Cut" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Premium Cut</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-1" data-category="dreadlocks">
+          <img src="images/gallery-8.jpg" alt="Relocking" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Relocking</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item reveal-up delay-2" data-category="beard">
+          <img src="images/gallery-9.jpg" alt="Beard Art" class="gallery-real-img" />
+          <div class="gallery-placeholder" aria-hidden="true"><i class="fas fa-camera"></i><span>Beard Art</span></div>
+          <div class="gallery-hover"><i class="fas fa-expand"></i></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lightbox (auto-opens when a gallery photo is clicked) -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close"><i class="fas fa-times"></i></button>
+        <div class="lightbox-img-wrap">
+          <img id="lightboxImg" src="" alt="Motion Blendz Work" class="lightbox-real-img" />
+        </div>
+        <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="testimonials section">
+    <div class="container">
+      <div class="section-header reveal-fade">
+        <p class="section-eyebrow">Client Reviews</p>
+        <h2 class="section-title">What They <em>Say</em></h2>
+      </div>
+      <div class="testimonials-wrapper reveal-fade">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testi-card glass-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"Motion Blendz completely changed how I feel about getting a haircut. The attention to detail is next level. My fade was immaculate — I walked out feeling like a million naira."</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><i class="fas fa-user"></i></div>
+              <div><strong>Emmanuel O.</strong><span>Regular Client</span></div>
+            </div>
+          </div>
+          <div class="testi-card glass-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"I booked the home service and it was flawless. They showed up on time, set up professionally, and gave me the best cut I've had in years. Highly recommend!"</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><i class="fas fa-user"></i></div>
+              <div><strong>Chukwuemeka A.</strong><span>Home Service Client</span></div>
+            </div>
+          </div>
+          <div class="testi-card glass-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"My dreadlock installation was beyond what I expected. Clean, neat, and exactly what I envisioned. These guys actually listen and deliver. Won't go anywhere else."</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><i class="fas fa-user"></i></div>
+              <div><strong>Adaeze M.</strong><span>Dreadlocks Client</span></div>
+            </div>
+          </div>
+          <div class="testi-card glass-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"The beard grooming service is a must. They shaped and trimmed my beard perfectly — hot towel, oil, everything. This is what premium grooming feels like."</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><i class="fas fa-user"></i></div>
+              <div><strong>Tunde B.</strong><span>Beard Grooming Client</span></div>
+            </div>
+          </div>
+          <div class="testi-card glass-card">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testi-text">"The hair dye came out exactly as I described. Vibrant, even, and long-lasting. I've been to many salons — none match the professionalism at Motion Blendz."</p>
+            <div class="testi-author">
+              <div class="testi-avatar"><i class="fas fa-user"></i></div>
+              <div><strong>Favour N.</strong><span>Hair Colour Client</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" id="testiPrev"><i class="fas fa-chevron-left"></i></button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-btn" id="testiNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING SECTION ===== -->
+  <section id="booking" class="booking section dark-section">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info reveal-left">
+          <p class="section-eyebrow">Secure Your Slot</p>
+          <h2 class="section-title">Book an <em>Appointment</em></h2>
+          <p>Ready for your transformation? Fill in the form and we'll confirm your slot. Walk in looking good — walk out looking legendary.</p>
+          <div class="booking-contact-hints">
+            <div class="contact-hint"><i class="fas fa-phone"></i><span>08149353481</span></div>
+            <div class="contact-hint"><i class="fab fa-whatsapp"></i><span>WhatsApp: 08149353481</span></div>
+            <div class="contact-hint"><i class="fab fa-instagram"></i><span>@motionblendz</span></div>
+          </div>
+        </div>
+        <div class="booking-form-wrap glass-card reveal-right">
+          <form id="bookingForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" />
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="08XXXXXXXXX" />
+                <span class="field-error"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Select Service</label>
+              <select id="service" name="service">
+                <option value="">— Choose a service —</option>
+                <option>Professional Haircut</option>
+                <option>Skin Fade</option>
+                <option>Home Service</option>
+                <option>Gents Hair Dye</option>
+                <option>Female Hair Dye</option>
+                <option>Hair Treatment</option>
+                <option>Dreadlocks</option>
+                <option>Relocking</option>
+                <option>Beard Grooming</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prefDate">Preferred Date</label>
+                <input type="date" id="prefDate" name="prefDate" />
+                <span class="field-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="prefTime">Preferred Time</label>
+                <input type="time" id="prefTime" name="prefTime" />
+                <span class="field-error"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (optional)</label>
+              <textarea id="message" name="message" rows="3" placeholder="Any special requests or notes..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width">
+              <i class="fas fa-calendar-check"></i> Confirm Booking
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header reveal-fade">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Contact <em>Us</em></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card glass-card reveal-up delay-1">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <h3>Call Us</h3>
+          <p>08149353481</p>
+          <a href="tel:+2348149353481" class="btn btn-outline-sm">Call Now</a>
+        </div>
+        <div class="contact-card glass-card reveal-up delay-2">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <p>08149353481</p>
+          <a href="https://wa.me/2348149353481" target="_blank" class="btn btn-whatsapp">Chat Now</a>
+        </div>
+        <div class="contact-card glass-card reveal-up delay-3">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <h3>Instagram</h3>
+          <p>@motionblendz</p>
+          <a href="https://instagram.com/motionblendz" target="_blank" class="btn btn-outline-sm">Follow Us</a>
+        </div>
+        <div class="contact-card glass-card reveal-up delay-1">
+          <div class="contact-icon"><i class="fab fa-tiktok"></i></div>
+          <h3>TikTok</h3>
+          <p>@motionblendz</p>
+          <a href="https://tiktok.com/@motionblendz" target="_blank" class="btn btn-outline-sm">Watch Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <div class="footer-brand">
+            <!-- LOGO: Save your logo as images/logo.png — it shows here automatically. -->
+            <div class="footer-logo">
+              <img src="images/logo.png" alt="Motion Blendz" class="footer-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
+              <span class="footer-logo-text" style="display:none;"><span class="logo-motion">MOTION</span><span class="logo-blendz">BLENDZ</span></span>
+            </div>
+            <p class="footer-tagline">Transforming Lives With Clippers</p>
+            <p class="footer-desc">Premium grooming experiences for every man and woman who demands the best. Book your transformation today.</p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/motionblendz" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://tiktok.com/@motionblendz" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/2348149353481" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              <a href="tel:+2348149353481" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#testimonials">Reviews</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Professional Haircuts</a></li>
+              <li><a href="#services">Skin Fades</a></li>
+              <li><a href="#services">Home Service</a></li>
+              <li><a href="#services">Dreadlocks</a></li>
+              <li><a href="#services">Hair Treatments</a></li>
+              <li><a href="#services">Beard Grooming</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-contact-list">
+              <li><i class="fas fa-phone"></i><span>08149353481</span></li>
+              <li><i class="fab fa-whatsapp"></i><span>08149353481</span></li>
+              <li><i class="fab fa-instagram"></i><span>@motionblendz</span></li>
+              <li><i class="fab fa-tiktok"></i><span>@motionblendz</span></li>
+            </ul>
+            <a href="#booking" class="btn btn-primary mt-2">Book Appointment</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Motion Blendz Barbershop. All rights reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color:#FF0000"></i> for premium grooming.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348149353481" class="float-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Message sent!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
