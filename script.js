@@ -324,9 +324,15 @@ if (track) {
 
 
 /* ============================================
-   9. BOOKING FORM VALIDATION & TOAST
+   9. BOOKING FORM — WHATSAPP ONLY SUBMISSION
    ============================================ */
 const bookingForm = document.getElementById('bookingForm');
+const serviceSelect = document.getElementById('service');
+const pricePreview = document.getElementById('pricePreview');
+const pricePreviewText = document.getElementById('pricePreviewText');
+
+// Your WhatsApp number in international format (no +, no spaces)
+const WHATSAPP_NUMBER = '2348149353481';
 
 function showToast(message, isError = false) {
   const toast = document.getElementById('toast');
@@ -347,28 +353,60 @@ function validateField(input) {
   let valid = true;
   let msg = '';
 
-  if (input.hasAttribute('required') || input.value.trim()) {
-    if (!input.value.trim()) {
+  if (!input.value.trim()) {
+    valid = false;
+    msg = 'This field is required.';
+  } else if (input.type === 'tel') {
+    const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
+    if (!phoneRegex.test(input.value.trim())) {
       valid = false;
-      msg = 'This field is required.';
-    } else if (input.type === 'tel') {
-      const phoneRegex = /^[0-9+\-\s()]{7,15}$/;
-      if (!phoneRegex.test(input.value.trim())) {
-        valid = false;
-        msg = 'Enter a valid phone number.';
-      }
+      msg = 'Enter a valid phone number.';
     }
   }
 
   if (error) error.textContent = msg;
-  input.classList.toggle('error', !valid && !!msg);
-  return valid || !msg;
+  input.classList.toggle('error', !valid);
+  return valid;
+}
+
+// Live price preview when a service is selected
+if (serviceSelect) {
+  serviceSelect.addEventListener('change', () => {
+    if (serviceSelect.value) {
+      pricePreviewText.textContent = serviceSelect.value;
+      pricePreview.classList.add('active');
+    } else {
+      pricePreviewText.textContent = 'Select a service to see the price';
+      pricePreview.classList.remove('active');
+    }
+  });
+}
+
+function formatBookingDate(dateStr) {
+  if (!dateStr) return '';
+  const date = new Date(dateStr + 'T00:00:00');
+  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+  return date.toLocaleDateString('en-GB', options);
+}
+
+function formatBookingTime(timeStr) {
+  if (!timeStr) return '';
+  const parts = timeStr.split(':');
+  const hour = parseInt(parts[0], 10);
+  const minute = parts[1];
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  const displayHour = hour % 12 === 0 ? 12 : hour % 12;
+  return displayHour + ':' + minute + ' ' + ampm;
 }
 
 if (bookingForm) {
-  // Live validation
-  bookingForm.querySelectorAll('input, select, textarea').forEach(field => {
-    field.addEventListener('blur', () => validateField(field));
+  // Live validation on blur
+  bookingForm.querySelectorAll('input, select').forEach(field => {
+    field.addEventListener('blur', () => {
+      if (['fullName', 'phone', 'service', 'prefDate', 'prefTime'].includes(field.id)) {
+        validateField(field);
+      }
+    });
     field.addEventListener('input', () => {
       if (field.classList.contains('error')) validateField(field);
     });
@@ -376,15 +414,18 @@ if (bookingForm) {
 
   bookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    let allValid = true;
 
-    const required = ['fullName', 'phone', 'service', 'prefDate', 'prefTime'];
-    required.forEach(id => {
-      const field = document.getElementById(id);
-      if (field) {
-        const v = validateField(field);
-        if (!v) allValid = false;
-      }
+    const fullName = document.getElementById('fullName');
+    const phone = document.getElementById('phone');
+    const service = document.getElementById('service');
+    const prefDate = document.getElementById('prefDate');
+    const prefTime = document.getElementById('prefTime');
+    const message = document.getElementById('message');
+
+    const fields = [fullName, phone, service, prefDate, prefTime];
+    let allValid = true;
+    fields.forEach(field => {
+      if (!validateField(field)) allValid = false;
     });
 
     if (!allValid) {
@@ -392,17 +433,29 @@ if (bookingForm) {
       return;
     }
 
-    // Simulate submission (replace with real API call)
-    const submitBtn = bookingForm.querySelector('[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+    // Build the WhatsApp message with all booking details
+    const lines = [
+      'Hello Motion Blendz! I would like to book an appointment.',
+      '',
+      'Name: ' + fullName.value.trim(),
+      'Phone: ' + phone.value.trim(),
+      'Service: ' + service.value,
+      'Preferred Date: ' + formatBookingDate(prefDate.value),
+      'Preferred Time: ' + formatBookingTime(prefTime.value)
+    ];
+
+    if (message.value.trim()) {
+      lines.push('Notes: ' + message.value.trim());
+    }
+
+    const whatsappMessage = encodeURIComponent(lines.join('\n'));
+    const whatsappURL = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + whatsappMessage;
+
+    showToast('Opening WhatsApp...');
 
     setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm Booking';
-      bookingForm.reset();
-      showToast('Booking confirmed! We\'ll contact you shortly. ✂️');
-    }, 2000);
+      window.open(whatsappURL, '_blank');
+    }, 600);
   });
 }
 
