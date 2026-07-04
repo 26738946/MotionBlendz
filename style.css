@@ -379,3 +379,53 @@ select option, select optgroup { background: #1a1a1a; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal-fade, .reveal-up, .reveal-left, .reveal-right { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   EXTRA STYLES — Added for final version
+   ============================================================ */
+
+/* Snapchat button colour */
+.btn-snapchat {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: #FFFC00;
+  color: #000;
+  transition: var(--t);
+}
+.btn-snapchat:hover { background: #e6e300; transform: translateY(-1px); }
+
+/* Ensure about-img-main uses relative so badge positions correctly */
+.about-img-main { position: relative; }
+
+/* Training image placeholder fallback when no image yet */
+.training-img-wrap {
+  position: relative;
+  border-radius: var(--rl);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, var(--black-3), var(--black-4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+.training-img-wrap::after {
+  content: 'Add training.jpg to images folder';
+  color: rgba(255,0,0,0.3);
+  font-size: 13px;
+  letter-spacing: 1px;
+  position: absolute;
+}
+.training-img-wrap img { position: relative; z-index: 1; }
+.training-img-wrap img[style*="display:none"] ~ *::after { display: none; }
+
+/* Training section background tweak */
+.training { background: var(--black); }
+
+/* Footer snapchat icon colour on hover */
+.footer-socials a:hover .fa-snapchat { color: #FFFC00; }
