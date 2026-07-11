@@ -173,15 +173,73 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .filter-btn { padding: 9px 22px; border-radius: 30px; border: 1.5px solid var(--glass-border); color: var(--white-dim); font-size: 13px; font-weight: 600; transition: var(--t); background: transparent; }
 .filter-btn:hover { border-color: var(--red); color: var(--red); }
 .filter-btn.active { background: var(--red); color: var(--white); border-color: var(--red); }
-.gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.gallery-item { position: relative; aspect-ratio: 1; border-radius: var(--r); overflow: hidden; cursor: pointer; border: 1px solid var(--glass-border); transition: opacity var(--t); }
+/* ============================================================
+   GALLERY — All photos same height, 3-column grid.
+   Every photo locked to 280px tall — no photo can overflow.
+   TO ADD MORE PHOTOS: just add a new gallery-item block in HTML.
+   TO CHANGE HEIGHT: edit the 280px value below.
+   ============================================================ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--glass-border);
+  background: var(--black-3);
+}
+
 .gallery-item.hidden { display: none; }
-.gallery-real-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform var(--ts); z-index: 1; }
-.gallery-item:hover .gallery-real-img { transform: scale(1.08); }
+
+.gallery-real-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-real-img { transform: scale(1.05); }
+
 .gallery-real-img + .gallery-placeholder { display: none; }
-.gallery-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, var(--black-3), var(--black-4)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,0,0,0.4); font-size: 12px; letter-spacing: 1px; }
+
+.gallery-placeholder {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, var(--black-3), var(--black-4));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(255,0,0,0.4);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
 .gallery-placeholder i { font-size: 30px; }
-.gallery-hover { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--white); opacity: 0; transition: opacity var(--t); }
+
+.gallery-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .gallery-item:hover .gallery-hover { opacity: 1; }
 
 /* ===== LIGHTBOX ===== */
