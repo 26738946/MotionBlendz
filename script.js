@@ -492,3 +492,43 @@ window.addEventListener('scroll', () => {
   if (heroDeco1) heroDeco1.style.transform = `translateY(${scrolled * 0.15}px)`;
   if (heroDeco2) heroDeco2.style.transform = `translateY(${scrolled * -0.1}px)`;
 }, { passive: true });
+
+/* Hero Background Slideshow */
+(function () {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  let current  = 0;
+  let busy     = false;
+
+  function go(next) {
+    if (busy || next === current) return;
+    busy = true;
+    const prev = slides[current];
+    const nxt  = slides[next];
+    nxt.style.transform = 'translateX(100%)';
+    nxt.style.opacity = '1';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        prev.classList.add('leaving');
+        prev.classList.remove('active');
+        nxt.classList.add('active');
+        nxt.style.transform = '';
+        nxt.style.opacity = '';
+        dots.forEach((d, i) => d.classList.toggle('active', i === next));
+        setTimeout(() => {
+          prev.classList.remove('leaving');
+          prev.style.transform = '';
+          prev.style.opacity = '';
+          current = next;
+          busy = false;
+        }, 900);
+      });
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => go(parseInt(dot.dataset.index)));
+  });
+
+  setInterval(() => go((current + 1) % slides.length), 5000);
+})();

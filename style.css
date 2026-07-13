@@ -585,3 +585,11 @@ select option, select optgroup { background: #1a1a1a; }
     }
 
 }
+/* Hero Slideshow */
+.hero-slider { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transform: translateX(100%); transition: transform 0.8s cubic-bezier(0.77,0,0.175,1), opacity 0.8s ease; }
+.hero-slide.active { opacity: 1; transform: translateX(0%); }
+.hero-slide.leaving { opacity: 1; transform: translateX(-100%); }
+.hero-slider-dots { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px; }
+.hero-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.6); background: transparent; cursor: pointer; padding: 0; transition: all 0.3s ease; }
+.hero-dot.active { background: #FF0000; border-color: #FF0000; transform: scale(1.3); }

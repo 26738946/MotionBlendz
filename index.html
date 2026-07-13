@@ -81,7 +81,21 @@
        BACKGROUND: Replace images/hero-bg.jpg with your own photo.
        ============================================================ -->
   <section id="home" class="hero">
-    <div class="hero-bg-image"></div>
+
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active" style="background-image: url('image 12.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('image 10.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('image 4.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('image 9.jpg')"></div>
+    </div>
+
+    <div class="hero-slider-dots">
+      <button class="hero-dot active" data-index="0"></button>
+      <button class="hero-dot" data-index="1"></button>
+      <button class="hero-dot" data-index="2"></button>
+      <button class="hero-dot" data-index="3"></button>
+    </div>
+
     <div class="hero-overlay"></div>
     <div class="hero-bg-grid"></div>
 
